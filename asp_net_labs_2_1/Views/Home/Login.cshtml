@@ -1,0 +1,46 @@
+﻿@model asp_net_labs_2_1.Models.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+    <h1>Login</h1>
+    <form class="loginForm" asp-action="Login" asp-controller="Home" method="post">
+        <div asp-validation-summary="ModelOnly"></div>
+        <div>
+            <div class="loginForm__item">
+                <label asp-for="Name">Имя:</label><br />
+                <input type="text" asp-for="Name" />
+                <span asp-validation-for="Name" />
+            </div>
+            <div class="loginForm__item">
+                <label asp-for="Age">Возраст:</label><br />
+                <input asp-for="Age" />
+                <span asp-validation-for="Age" />
+            </div>
+            <div class="loginForm__item">
+                <label asp-for="Email">Эл.почта:</label><br />
+                <input asp-for="Email" />
+                <span asp-validation-for="Email" />
+            </div>
+            <div class="loginForm__item">
+                <label asp-for="Password">Пароль:</label><br />
+                <input asp-for="Password" />
+                <span asp-validation-for="Password" />
+            </div>
+            <div class="loginForm__item">
+                <label asp-for="PasswordConfirm">Подтвердить пароль:</label><br />
+                <input asp-for="PasswordConfirm" />
+                <span asp-validation-for="PasswordConfirm" />
+            </div>
+            <div class="loginForm__item">
+                <input type="submit" value="Sign in" />
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
